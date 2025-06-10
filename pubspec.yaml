@@ -1,6 +1,6 @@
 name: oryn
 description: A fast, light-weight web framework to provide a simple way to fulfill the needs of many modern web server these days.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/atrox39/Oryn
 repo: https://github.com/atrox39/Oryn
 
