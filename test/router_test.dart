@@ -1,4 +1,4 @@
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 import 'package:test/test.dart';
 
 Callback get _callback => (req, res) {};

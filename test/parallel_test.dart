@@ -1,6 +1,6 @@
 import 'dart:isolate';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 import 'package:test/test.dart';
 
 import 'package:http/http.dart' as http;

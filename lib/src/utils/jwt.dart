@@ -50,17 +50,17 @@ class Jwt {
       final jwt = JWT.verify(token, SecretKey(secret));
       done?.call(null, jwt.payload as Map<String, dynamic>);
       return jwt.payload;
-    } on JWTExpiredError {
+    } on JWTExpiredException {
       if (done != null) {
-        done.call('JWTExpiredError', null);
+        done.call('JWTExpiredException', null);
       } else {
-        throw JWTExpiredError();
+        throw JWTExpiredException();
       }
-    } on JWTError catch (e) {
+    } on JWTException catch (e) {
       if (done != null) {
         done.call(e.message, null);
       } else {
-        throw JWTError(e.message);
+        throw JWTException(e.message);
       }
     } on Exception catch (e) {
       if (done != null) {
@@ -69,5 +69,6 @@ class Jwt {
         throw Exception(e);
       }
     }
+    return null;
   }
 }

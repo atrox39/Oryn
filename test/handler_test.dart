@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 import 'package:test/test.dart';
 
 void main() {

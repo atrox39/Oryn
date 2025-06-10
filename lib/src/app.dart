@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 import 'package:queue/queue.dart';
 
 import 'controller/controller.dart';
@@ -19,7 +19,7 @@ import 'socket.dart';
 import 'typedef.dart';
 
 ///
-/// Lucifer Core App
+/// Oryn Core App
 ///
 class App {
   App({

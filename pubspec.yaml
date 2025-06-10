@@ -1,8 +1,8 @@
-name: lucifer
+name: oryn
 description: A fast, light-weight web framework to provide a simple way to fulfill the needs of many modern web server these days.
-version: 1.0.7
-homepage: https://github.com/salkuadrat/lucifer
-repo: https://github.com/salkuadrat/lucifer
+version: 1.0.0
+homepage: https://github.com/atrox39/Oryn
+repo: https://github.com/atrox39/Oryn
 
 environment:
   sdk: '>=2.14.0 <3.0.0'

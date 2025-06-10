@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 import 'package:test/test.dart';
 
 const token = '''

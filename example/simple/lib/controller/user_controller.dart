@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 
 class UserController extends Controller {
   UserController(App app) : super(app);

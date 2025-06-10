@@ -177,7 +177,7 @@ class Req {
   /// Use it also to add or replace data in the body.
   ///
   /// ```dart
-  /// req.data('username', 'lucifer');
+  /// req.data('username', 'oryn');
   /// ```
   ///
   dynamic data(String key, [value]) {
@@ -313,7 +313,7 @@ class Req {
   ///
   /// req.session('username'); // get a session value
   ///
-  /// req.session('username', 'lucifer'); // set a session value
+  /// req.session('username', 'oryn'); // set a session value
   /// ```
   ///
   session([String? name, value]) {

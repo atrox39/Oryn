@@ -1,4 +1,4 @@
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 
 import 'controller/user_controller.dart';
 
@@ -32,17 +32,17 @@ void main() async {
   app.get('/string', (req, res) => 'string');
   app.get('/int', (req, res) => 25);
   app.get('/double', (req, res) => 3.14);
-  app.get('/json', (req, res) => {'name': 'lucifer'});
-  app.get('/list', (req, res) => ['Lucifer', 'Detective']);
+  app.get('/json', (req, res) => {'name': 'oryn'});
+  app.get('/list', (req, res) => ['Oryn']);
 
   app.get('/empty', (req, res) {});
 
   app.get('/redirect', (req, res) {
-    res.redirect('/profile/lucifer');
+    res.redirect('/profile/oryn');
   });
 
   app.get('/to', (req, res) {
-    res.to('/profile/lucifer?age=999999');
+    res.to('/profile/oryn?age=999999');
   });
 
   app.get('/profile/:username', (Req req, Res res) async {
@@ -77,7 +77,7 @@ void testJwt() {
   final secret = 'secret';
 
   final payload = <String, dynamic>{
-    'username': 'lucifer',
+    'username': 'oryn',
     'age': 10000,
   };
 

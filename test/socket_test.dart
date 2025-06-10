@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 import 'package:test/test.dart';
 
 main() {

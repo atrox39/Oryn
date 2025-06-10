@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 
 void main() async {
   final app = App();

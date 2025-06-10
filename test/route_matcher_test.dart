@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:lucifer/lucifer.dart';
-import 'package:lucifer/src/route/route_matcher.dart';
+import 'package:oryn/oryn.dart';
+import 'package:oryn/src/route/route_matcher.dart';
 import 'package:test/test.dart';
 
 List<String> match(String path, List<Route> routes) {

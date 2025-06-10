@@ -1,4 +1,4 @@
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 import 'package:test/test.dart';
 
 main() {
@@ -35,9 +35,9 @@ main() {
     expect(parseValue('[1, "string", 3, "s"]'), equals([1, 'string', 3, 's']));
     expect(parseValue('[1, "null", 2, "d"]'), equals([1, 'null', 2, 'd']));
     expect(
-      parseValue('[{"name": "lucifer"}, {"name": "decker"}]'),
+      parseValue('[{"name": "oryn"}, {"name": "decker"}]'),
       equals([
-        {'name': 'lucifer'},
+        {'name': 'oryn'},
         {'name': 'decker'}
       ]),
     );
@@ -45,21 +45,21 @@ main() {
 
   test('Parse json', () {
     expect(
-      parseValue('{"name": "lucifer", "age": 10000, "d": 2.5}'),
-      equals({'name': 'lucifer', 'age': 10000, 'd': 2.5}),
+      parseValue('{"name": "oryn", "age": 10000, "d": 2.5}'),
+      equals({'name': 'oryn', 'age': 10000, 'd': 2.5}),
     );
 
     expect(
-      parseJson('{"name": "lucifer", "10000": "age"}'),
-      equals({'name': 'lucifer', '10000': 'age'}),
+      parseJson('{"name": "oryn", "10000": "age"}'),
+      equals({'name': 'oryn', '10000': 'age'}),
     );
   });
 
   test('Parse UrlEncoded', () {
     var query =
-        parseUrlEncoded(Uri.parse('$url/?hello=detective&name=lucifer').query);
-    expect(query, equals({'hello': 'detective', 'name': 'lucifer'}));
-    expect(query['name'], equals('lucifer'));
+        parseUrlEncoded(Uri.parse('$url/?hello=detective&name=oryn').query);
+    expect(query, equals({'hello': 'detective', 'name': 'oryn'}));
+    expect(query['name'], equals('oryn'));
 
     var body = parseUrlEncoded(
         'hello=detective&nums%5B%5D=1&nums%5B%5D=2.0&nums%5B%5D=${3 - 1}&map.foo.bar=baz&enabled');

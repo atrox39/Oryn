@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:isolate';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:oryn/oryn.dart';
 
 void main() async {
   // Start the default app

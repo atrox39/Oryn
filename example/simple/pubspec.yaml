@@ -1,5 +1,5 @@
 name: simple
-description: A simple Lucifer web server
+description: A simple Oryn web server
 version: 1.0.0
 publish_to: none
 
@@ -7,7 +7,7 @@ environment:
   sdk: '>=2.14.0 <3.0.0'
 
 dependencies:
-  lucifer:
+  oryn:
     path: ../../
   
 dev_dependencies:

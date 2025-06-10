@@ -5,7 +5,7 @@ import '../request.dart';
 import '../response.dart';
 
 ///
-/// Base Controller to be used in Lucifer application
+/// Base Controller to be used in Oryn application
 ///
 class Controller {
   final App app;

@@ -67,11 +67,6 @@ Map<String, dynamic> parseUrlEncoded(String body) {
           data[key] = parseValue(value);
         }
       } else {
-        // for query without value like `enabled` in
-        // http://luciferdeckerstar.com/search?q=detective&enabled
-        //
-        // set it into data['enabled'] = true
-        //
         String key = Uri.decodeQueryComponent(query);
         data[key] = true;
       }

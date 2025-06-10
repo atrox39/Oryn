@@ -1,18 +1,18 @@
-# Lucifer Lightbringer
+# Oryn Lightbringer
 
-<img src="https://github.com/salkuadrat/lucifer/raw/master/lucifer.png" height="200" alt="Lucifer">
+<img src="https://github.com/atrox39/Oryn/raw/master/oryn.png" height="200" alt="Oryn">
 
-Lucifer is a fast, lightweight web framework in dart.
+Oryn is a fast, lightweight web framework in dart.
 
 Built on top of native dart `HttpServer` to provide an elegant way to fulfill the needs of many modern web server these days.
 
-Lucifer is open, efficient, and provide lots of features to handle dozen kinds of things.
+Oryn is open, efficient, and provide lots of features to handle dozen kinds of things.
 
 ## Installation 
 
 [Install Dart SDK](https://dart.dev/get-dart)
 
-You may start creating a new Lucifer project using lucy command.
+You may start creating a new Oryn project using lucy command.
 
 ```bash
 pub global activate lucy
@@ -30,10 +30,10 @@ Feel free to use any project name you want.
 
 Now we are ready to play with our web server.
 
-You may open `main.dart` in your project `lib` directory to learn the structure of a simple lucifer application.
+You may open `main.dart` in your project `lib` directory to learn the structure of a simple Oryn application.
 
 ```dart
-import 'package:lucifer/lucifer.dart';
+import 'package:Oryn/Oryn.dart';
 
 void main() {
   final app = App();
@@ -69,14 +69,14 @@ Server running at http://localhost:3000
 
 ## Fundamentals 
 
-You may learn the fundamentals of Lucifer by understanding the code inside the `lib/main.dart` of your new project.
+You may learn the fundamentals of Oryn by understanding the code inside the `lib/main.dart` of your new project.
 
 The short lines of code do several things behind the scene.
 
-First, we import `lucifer` and create a web application by assigning a new `App` instance to `app`
+First, we import `Oryn` and create a web application by assigning a new `App` instance to `app`
 
 ```dart
-import 'package:lucifer/lucifer.dart';
+import 'package:Oryn/Oryn.dart';
 ```
 
 ```dart
@@ -99,7 +99,7 @@ app.get('/', (Req req, Res res) async {
 });
 ```
 
-Every HTTP verbs comes with its own method in Lucifer: `get()`, `post()`, `put()`, `patch()`, `delete()`, with the first argument corresponds to the route path.
+Every HTTP verbs comes with its own method in Oryn: `get()`, `post()`, `put()`, `patch()`, `delete()`, with the first argument corresponds to the route path.
 
 ```dart
 app.get('/', (Req req, Res res) {
@@ -133,7 +133,7 @@ app.get('/', (Req req, Res res) async {
 });
 ```
 
-In the route callback function, Lucifer provides two objects, `req` and `res`, that represents `Req` and `Res` instance.
+In the route callback function, Oryn provides two objects, `req` and `res`, that represents `Req` and `Res` instance.
 
 `Req` is a Request class built on top of native dart `HttpRequest`. 
 
@@ -215,7 +215,7 @@ There are some properties of `req` that you will likely access in your applicati
   </tr>
   <tr>
     <td>app</td>
-    <td>holds reference to the Lucifer app object</td>
+    <td>holds reference to the Oryn app object</td>
   </tr>
   <tr>
     <td>uriString</td>
@@ -259,17 +259,17 @@ There are some properties of `req` that you will likely access in your applicati
 
 Now you may learn how to retrieve the GET query parameters. 
 
-Query string is the part that comes after URL path, and starts with a question mark `?` like `?username=lucifer`. 
+Query string is the part that comes after URL path, and starts with a question mark `?` like `?username=Oryn`. 
 
 Multiple query parameters can be added with character `&` like so:
 
 ```text
-?username=lucifer&age=10000
+?username=Oryn&age=10000
 ```
 
 How may we get the values?
 
-Lucifer provides `req.query` object to make it easy to get all query values.
+Oryn provides `req.query` object to make it easy to get all query values.
 
 ```dart
 app.get('/', (Req req, Res res) {
@@ -352,7 +352,7 @@ Besides `json()` and `urlencoded()`, there are other available built in body par
 - `urlencoded()` : to parse urlencoded request body
 - `multipart()` : to parse multipart request body
 
-To ensure the core framework stays lightweight, Lucifer will not assume anything about the request body. You may choose and apply the appropriate parser as needed in your application.
+To ensure the core framework stays lightweight, Oryn will not assume anything about the request body. You may choose and apply the appropriate parser as needed in your application.
 
 However, if you want to be safe and need to be able to handle all forms of request body, you may simply use the all-inclusive `bodyParser()` middleware.
 
@@ -374,7 +374,7 @@ app.get('/', (Req req, Res res) async {
 });
 ```
 
-If you pass a string, lucifer will set `Content-Type` header to `text/html`.
+If you pass a string, Oryn will set `Content-Type` header to `text/html`.
 
 If you pass a map or list object, it will set as `application/json`, and encode the data into JSON.
 
@@ -399,9 +399,9 @@ app.get('/int', (req, res) => 25);
 
 app.get('/double', (req, res) => 3.14);
 
-app.get('/json', (req, res) => { 'name': 'lucifer' });
+app.get('/json', (req, res) => { 'name': 'Oryn' });
 
-app.get('/list', (req, res) => ['Lucifer',  'Detective']);
+app.get('/list', (req, res) => ['Oryn',  'Detective']);
 ```
 
 ## HTTP Status Response
@@ -441,11 +441,11 @@ Besides `res.send()` method, we may also use `res.json()` to send json data to t
 The method accepts a map or list object, and automatically encode it into json string with `jsonEncode()`
 
 ```dart
-res.json({ 'name': 'Lucifer', 'age': 10000 });
+res.json({ 'name': 'Oryn', 'age': 10000 });
 ```
 
 ```dart
-res.json(['Lucifer', 'Detective', 'Amenadiel']);
+res.json(['Oryn', 'Detective', 'Amenadiel']);
 ```
 
 ## Cookies 
@@ -453,7 +453,7 @@ res.json(['Lucifer', 'Detective', 'Amenadiel']);
 You may use `res.cookie()` to manage cookies in your application.
 
 ```dart
-res.cookie('username', 'Lucifer');
+res.cookie('username', 'Oryn');
 ```
 
 The method accepts additional parameters with various options.
@@ -461,8 +461,8 @@ The method accepts additional parameters with various options.
 ```dart
 res.cookie(
   'username', 
-  'Lucifer', 
-  domain: '.luciferinheaven.com',
+  'Oryn', 
+  domain: '.Oryninheaven.com',
   path: '/admin',
   secure: true,
 );
@@ -471,7 +471,7 @@ res.cookie(
 ```dart
 res.cookie(
   'username',
-  'Lucifer',
+  'Oryn',
   expires: Duration(milliseconds: DateTime.now().millisecondsSinceEpoch + 900000),
   httpOnly: true,
 );
@@ -885,7 +885,7 @@ final user = UserController(app);
 app.route('/user', user).get('/vip', user.vip);
 ```
 
-To help you with adding `Controller` to your project, Lucifer provides another command.
+To help you with adding `Controller` to your project, Oryn provides another command.
 
 ```shell
 $ l c post
@@ -915,7 +915,7 @@ Now if you have `index.html` file in the `public` directory, it will be served a
 
 ## Sending Files
 
-Lucifer provides a simple way to send file to the client with `res.download()` or `res.sendFile()`.
+Oryn provides a simple way to send file to the client with `res.download()` or `res.sendFile()`.
 
 When user hit a route that sends file with `res.download()`, browsers will prompt the user for download. 
 
@@ -1016,11 +1016,11 @@ By default, cors will set cross-origin header to accept any incoming requests. Y
 final app = App();
 
 app.use(cors(
-  origin: 'https://luciferinheaven.com'
+  origin: 'https://Oryninheaven.com'
 ));
 
 app.get('/', (Req req, Res res) async {
-  await res.send('Now all routes can only accept request from https://luciferinheaven.com');
+  await res.send('Now all routes can only accept request from https://Oryninheaven.com');
 });
 ```
 
@@ -1088,7 +1088,7 @@ final username = req.session('username');
 You may use `req.session(name, value)` to add (or replace) value in the session.
 
 ```dart
-final username = 'lucifer';
+final username = 'Oryn';
 
 req.session('username', username);
 ```
@@ -1123,7 +1123,7 @@ This information can be verified and trusted because it is digitally signed.
 
 JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
 
-You may utilize JWT in your Lucifer application by using an instance of `Jwt`  to sign and verify token.
+You may utilize JWT in your Oryn application by using an instance of `Jwt`  to sign and verify token.
 
 ```dart
 final app = App();
@@ -1139,7 +1139,7 @@ app.get('/login', (Req req, Res res) {
   ...
 
   final payload = <String, dynamic>{
-    'username': 'lucifer',
+    'username': 'Oryn',
     'age': 10000,
   };
 
@@ -1224,7 +1224,7 @@ Middleware is a function that hooks into the routing process. It performs some o
 
 Middleware is usually used to modify the req or res object, or to terminate the request before it reaches route callback.
 
-You may add middleware in your Lucifer application like so:
+You may add middleware in your Oryn application like so:
 
 ```dart
 app.use((Req req, Res res) async {
@@ -1234,7 +1234,7 @@ app.use((Req req, Res res) async {
 
 The code looks similar with the route callback.
 
-Most of the time, you will be enough with using the built-in Lucifer middlewares, like `static`, `cors`, or `session`.
+Most of the time, you will be enough with using the built-in Oryn middlewares, like `static`, `cors`, or `session`.
 
 However, you may create a custom middleware, and then use it for a specific route by putting it in the middle of route and callback.
 
@@ -1293,9 +1293,9 @@ app.get('/user', [ verifyToken, authorize ], (req, res) async {
 
 There is no `next()` to call in these middleware (unlike other web frameworks). 
 
-Processing next is automatically handled by lucifer.
+Processing next is automatically handled by Oryn.
 
-Lucifer will always run to the next middleware or callback in the current stack... Unless, you send some response to the client in the middleware, which will close the connection and stop all executions of the next middlewares/callback.
+Oryn will always run to the next middleware or callback in the current stack... Unless, you send some response to the client in the middleware, which will close the connection and stop all executions of the next middlewares/callback.
 
 Since the call is automatic, it's important to always remember to use proper  `async` `await` when you're dealing with asynchronous functions.
 
@@ -1311,7 +1311,7 @@ Here is a simple rule to follow... if calling a function that returns `Future` o
 
 If in the middle of debugging your application, you see error in the terminal with messages like `HTTP headers not mutable` or `headers already sent`, it's a clear indicator that some parts in the application need to use proper `async await`.
 
-To help you with adding custom middleware to your project, Lucifer provides another command like so:
+To help you with adding custom middleware to your project, Oryn provides another command like so:
 
 ```shell
 $ l m custom
@@ -1569,7 +1569,7 @@ In the above example, we use three methods:
 
 - `trim()`: to trim characters (whitespace by default) at the beginning and the end of a string
 - `escape()`: to replace `<`, `>`, `&`, `'`, `"` and `/` with their corresponding HTML entities
-- `normalizeEmail()`: to normalize an email address. It accepts several options to lowercase email addresses or subaddresses (e.g. lucifer+morningstar@heaven.com)
+- `normalizeEmail()`: to normalize an email address. It accepts several options to lowercase email addresses or subaddresses (e.g. Oryn+morningstar@heaven.com)
 
 There are many other methods we can use.
 
@@ -1727,11 +1727,11 @@ print('File is saved at ${f.path}');
 
 ## Templating
 
-Lucifer provides a default templating by utilizing the `Mustache` engine. 
+Oryn provides a default templating by utilizing the `Mustache` engine. 
 
 It uses a [`mustache_template`](https://pub.dev/packages/mustache_template) package which is implemented from the [official mustache spec](https://mustache.github.io/).
 
-As usual, to keep the core framework stays lightweight, lucifer doesn't attach any template engine to your default application. 
+As usual, to keep the core framework stays lightweight, Oryn doesn't attach any template engine to your default application. 
 
 To use the `mustache` templating engine, you may apply it first like so:
 
@@ -1859,7 +1859,7 @@ app.use(customTemplating());
 
 ## Security
 
-Lucifer has a built-in `security` middleware that covers a complete standard security protections for guarding your application. 
+Oryn has a built-in `security` middleware that covers a complete standard security protections for guarding your application. 
 
 To use them, you may simply apply it using `app.use()`
 
@@ -1873,7 +1873,7 @@ app.use(security());
 
 ## Error Handling
 
-Lucifer will automatically handle the errors that occured in your application. 
+Oryn will automatically handle the errors that occured in your application. 
 
 However, you may set your own error handling using `app.on()`
 
@@ -1938,7 +1938,7 @@ ServiceUnavailableException
 
 ## Parallel Processing
 
-Parallel and multithread-ing is supported by default in Lucifer/Dart. 
+Parallel and multithread-ing is supported by default in Oryn/Dart. 
 
 You may do it by distributing the application processes evenly in various isolates.
 
@@ -1946,7 +1946,7 @@ You may do it by distributing the application processes evenly in various isolat
 import 'dart:async';
 import 'dart:isolate';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:Oryn/Oryn.dart';
 
 void main() async {
   // Start an app
@@ -1981,12 +1981,12 @@ Future<App> startApp() async {
 
 Web socket is a necessary part of web application to initiate persistent communications between client and server. 
 
-You may utilize web socket in your Lucifer application like so:
+You may utilize web socket in your Oryn application like so:
 
 ```dart
 import 'dart:io';
 
-import 'package:lucifer/lucifer.dart';
+import 'package:Oryn/Oryn.dart';
 
 void main() async {
   final app = App();
@@ -2040,7 +2040,7 @@ void main() async {
 
 ## Deployment
 
-As there are many roads to Rome, there are many ways to deploy a lucifer application. 
+As there are many roads to Rome, there are many ways to deploy a Oryn application. 
 
 You can upload the dart code to your own server, or to a VPS, or run `dart build` and upload the generated binary file. 
 
@@ -2106,26 +2106,26 @@ $ git push heroku master
 <!---
 ## REST API
 
-This part will includes a simple tutorial to create a fully functioning REST API with Lucifer.
+This part will includes a simple tutorial to create a fully functioning REST API with Oryn.
 -->
 
 <!---
 ## GraphQL
 
-This part will includes a simple tutorial to create a fully functioning GraphQL with Lucifer.
+This part will includes a simple tutorial to create a fully functioning GraphQL with Oryn.
 -->
 
 ## Contributions
 
 Feel free to contribute to the project in any ways. 
 
-This includes code reviews, pull requests, documentations, tutorials, or reporting bugs that you might found in Lucifer.
+This includes code reviews, pull requests, documentations, tutorials, or reporting bugs that you might found in Oryn.
 
 ## License 
 
 MIT License
 
-Copyright (c) 2021 Lucifer
+Copyright (c) 2021 Oryn
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
