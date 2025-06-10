@@ -56,7 +56,7 @@ You may test running it with the following command:
 
 ```bash
 cd blog
-l run
+oryn run
 ```
 
 Now you may open `http://localhost:3000` in the web browser. 
@@ -888,7 +888,7 @@ app.route('/user', user).get('/vip', user.vip);
 To help you with adding `Controller` to your project, Oryn provides another command.
 
 ```shell
-$ l c post
+$ oryn c post
 ```
 
 The command above will create file `post_controller.dart` in the `/lib/controller` directory, and fill it with a boilerplate `PostController` class.
@@ -896,7 +896,7 @@ The command above will create file `post_controller.dart` in the `/lib/controlle
 You may also use the command to create multiple `Controller`.
 
 ```shell
-$ l c post news user customer
+$ oryn c post news user customer
 ```
 
 ## Static Files
@@ -1314,7 +1314,7 @@ If in the middle of debugging your application, you see error in the terminal wi
 To help you with adding custom middleware to your project, Oryn provides another command like so:
 
 ```shell
-$ l m custom
+$ oryn m custom
 ```
 
 The command above will create file `custom.dart` in the `/lib/middleware` directory, and fill it with a boilerplate `custom` middleware function.
@@ -1322,7 +1322,7 @@ The command above will create file `custom.dart` in the `/lib/middleware` direct
 You may also use the command to generate multiple middlewares.
 
 ```shell
-$ l m custom log auth
+$ oryn m custom log auth
 ```
 
 ## Forms
