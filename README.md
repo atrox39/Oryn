@@ -12,17 +12,17 @@ Oryn is open, efficient, and provide lots of features to handle dozen kinds of t
 
 [Install Dart SDK](https://dart.dev/get-dart)
 
-You may start creating a new Oryn project using lucy command.
+You may start creating a new Oryn project using `oryn` command.
 
 ```bash
-pub global activate lucy
+pub global activate oryn
 
-l create desire
+oryn create blog
 ```
 
-The first command will activate command-line interface (CLI), named [Lucy](https://pub.dev/packages/lucy), to be accessible from your terminal. 
+The first command will activate command-line interface (CLI), named [Oryn](https://pub.dev/packages/oryn), to be accessible from your terminal. 
 
-Then `l create desire` will generate your new project in the `desire` directory. 
+Then `oryn create blog` will generate your new project in the `blog` directory. 
 
 Feel free to use any project name you want.
 
@@ -33,7 +33,7 @@ Now we are ready to play with our web server.
 You may open `main.dart` in your project `lib` directory to learn the structure of a simple Oryn application.
 
 ```dart
-import 'package:Oryn/Oryn.dart';
+import 'package:oryn/oryn.dart';
 
 void main() {
   final app = App();
@@ -42,7 +42,7 @@ void main() {
   app.use(logger());
 
   app.get('/', (Req req, Res res) async {
-    await res.send('Hello Detective');
+    await res.send('Hello from Oryn');
   });
 
   await app.listen(port);
@@ -55,13 +55,13 @@ void main() {
 You may test running it with the following command:
 
 ```bash
-cd desire
+cd blog
 l run
 ```
 
 Now you may open `http://localhost:3000` in the web browser. 
 
-If all went well, it will display `Hello Detective` and print the following message in your terminal.
+If all went well, it will display `Hello from Oryn` and print the following message in your terminal.
 
 ```text
 Server running at http://localhost:3000
@@ -76,7 +76,7 @@ The short lines of code do several things behind the scene.
 First, we import `Oryn` and create a web application by assigning a new `App` instance to `app`
 
 ```dart
-import 'package:Oryn/Oryn.dart';
+import 'package:oryn/oryn.dart';
 ```
 
 ```dart
@@ -129,7 +129,7 @@ To handle the incoming request and send a response, you may write your code insi
 
 ```dart
 app.get('/', (Req req, Res res) async {
-  await res.send('Hello Detective');
+  await res.send('Hello from Oryn');
 });
 ```
 
@@ -143,7 +143,7 @@ It holds all information about the incoming request, such as request parameters,
 
 It's mostly used to manipulate response and sending it to the client.
 
-What you did before is sending a message string `Hello Detective` to the client using `res.send()`. This method sets the string in the response body, and then close the connection.
+What you did before is sending a message string `Hello from Oryn` to the client using `res.send()`. This method sets the string in the response body, and then close the connection.
 
 The last line of our code starts the server and listen for incoming requests on the specified `port`:
 
@@ -175,7 +175,7 @@ Environment is a set of variables known to a process (such as, ENV, PORT, etc).
 
 It's highly recommended to mimic production environment during development by reading it from `.env` file.
 
-When we run `l create` command, a `.env` file is created in the root project directory, containing these values.
+When we run `oryn create` command, a `.env` file is created in the root project directory, containing these values.
 
 ```text
 ENV = development
@@ -370,7 +370,7 @@ In the example above, we have used `res.send()` to send a simple response to the
 
 ```dart
 app.get('/', (Req req, Res res) async {
-  await res.send('Hello Detective');
+  await res.send('Hello from Oryn');
 });
 ```
 
@@ -401,7 +401,7 @@ app.get('/double', (req, res) => 3.14);
 
 app.get('/json', (req, res) => { 'name': 'Oryn' });
 
-app.get('/list', (req, res) => ['Oryn',  'Detective']);
+app.get('/list', (req, res) => ['Oryn']);
 ```
 
 ## HTTP Status Response
@@ -445,7 +445,7 @@ res.json({ 'name': 'Oryn', 'age': 10000 });
 ```
 
 ```dart
-res.json(['Oryn', 'Detective', 'Amenadiel']);
+res.json(['Oryn']);
 ```
 
 ## Cookies 
@@ -1763,11 +1763,11 @@ final app = App();
 app.use(mustache());
 
 app.get('/', (Req req, Res res) async {
-  await res.render('index', { 'title': 'Hello Detective' });
+  await res.render('index', { 'title': 'Hello from Oryn' });
 });
 ```
 
-Now, you may run `l run` command, open http://localhost:3000, and you will see a rendered html page displaying `Hello Detective`.
+Now, you may run `l run` command, open http://localhost:3000, and you will see a rendered html page displaying `Hello from Oryn`.
 
 You may change the default `views` directory with any directory you want.
 
@@ -1778,7 +1778,7 @@ final app = App();
 app.use(mustache('template'));
 
 app.get('/', (Req req, Res res) async {
-  await res.view('index', { 'title': 'Hello Detective' });
+  await res.view('index', { 'title': 'Hello from Oryn' });
 });
 ```
 
@@ -1794,7 +1794,7 @@ You may add `index.html` to the `template` directory.
 </html>
 ```
 
-Then you may run it, open in the browser, and you will see another html page containing `Hello Detective from template`.
+Then you may run it, open in the browser, and you will see another html page containing `Hello from Oryn from template`.
 
 For more details on how to use `Mustache` engine, you may refer to the [mustache manual](https://mustache.github.io/mustache.5.html).
 
@@ -1967,7 +1967,7 @@ Future<App> startApp() async {
   final port = env('PORT') ?? 3000;
 
   app.get('/', (Req req, Res res) async {
-    await res.send('Hello Detective');
+    await res.send('Hello from Oryn');
   });
 
   await app.listen(port);
@@ -2125,7 +2125,7 @@ This includes code reviews, pull requests, documentations, tutorials, or reporti
 
 MIT License
 
-Copyright (c) 2021 Oryn
+Copyright (c) 2025 Oryn
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
