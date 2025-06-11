@@ -1,11 +1,14 @@
 import 'package:oryn/oryn.dart';
 import 'package:oryn/orm.dart';
+import 'package:simple/model/user_model.dart';
 
 import 'controller/user_controller.dart';
 
 void main() async {
   final sqlite = SqliteConnection(':memory:');
   DatabaseService.use(sqlite);
+  final sql = SqliteSchemaGenerator().generateCreateTableSql(User);
+  print(sql);
   sqlite.execute('''
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
