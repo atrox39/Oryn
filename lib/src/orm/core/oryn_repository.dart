@@ -1,11 +1,20 @@
 import 'database_service.dart';
-import 'oryn_model.dart';
 
-abstract class OrynRepository<T extends OrynModel> {
+abstract class OrynRepository<T> {
   final String tableName;
   final T Function(Map<String, dynamic>) fromMap;
 
   OrynRepository({required this.tableName, required this.fromMap});
+
+  Future<T?> create(T data) async {
+    final id = await DatabaseService.driver.insert(tableName, data as Map<String, dynamic>);
+    return find(id.toString());
+  }
+
+  Future<bool> delete(int id) async {
+    final result = await DatabaseService.driver.delete(tableName, 'id = ?', [id]);
+    return result > 0;
+  }
 
   Future<T?> find(String id) async {
     final results = await DatabaseService.driver.query(
