@@ -1,15 +1,18 @@
 import 'dart:async';
 
 import 'package:oryn/oryn.dart';
+import 'package:simple/repository/user_repository.dart';
 
 class UserController extends Controller {
+  final userRepository = UserRepository();
   UserController(App app) : super(app);
 
   String string = '';
 
   @override
   FutureOr index(Req req, Res res) async {
-    await res.send('User List');
+    final user = await userRepository.find('1');
+    await res.json(user!.toMap());
   }
 
   @override

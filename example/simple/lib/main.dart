@@ -1,8 +1,21 @@
 import 'package:oryn/oryn.dart';
+import 'package:oryn/orm.dart';
 
 import 'controller/user_controller.dart';
 
 void main() async {
+  final sqlite = SqliteConnection(':memory:');
+  DatabaseService.use(sqlite);
+  sqlite.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT
+    );
+  ''');
+  sqlite.execute('''
+    INSERT INTO users (name) VALUES ('Oryn');
+  ''');
+
   final app = App();
   final port = env('PORT') ?? 3000;
 
